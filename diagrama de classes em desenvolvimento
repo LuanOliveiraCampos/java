@@ -1,0 +1,162 @@
+// Classe Cliente
+public class Cliente {
+    private String nome;
+    private String endereco;
+    private String email;
+    
+    // Construtor
+    public Cliente(String nome, String endereco, String email) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.email = email;
+    }
+    
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public String getEndereco() {
+        return endereco;
+    }
+    
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+
+// Classe Produto
+public class Produto {
+    private String nome;
+    private double preco;
+    
+    // Construtor
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+    
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public double getPreco() {
+        return preco;
+    }
+    
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+}
+
+// Classe Compra
+public class Compra {
+    private Cliente cliente;
+    private Produto produto;
+    private Funcionario funcionario;
+    private double valor;
+    
+    // Construtor
+    public Compra(Cliente cliente, Produto produto, Funcionario funcionario, double valor) {
+        this.cliente = cliente;
+        this.produto = produto;
+        this.funcionario = funcionario;
+        this.valor = valor;
+    }
+    
+    // Getters e Setters
+    public Cliente getCliente() {
+        return cliente;
+    }
+    
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
+    public Produto getProduto() {
+        return produto;
+    }
+    
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+    
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+    
+    public double getValor() {
+        return valor;
+    }
+    
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+}
+
+// Classe Funcionario
+public class Funcionario {
+    private String nome;
+    private String cargo;
+    
+    // Construtor
+    public Funcionario(String nome, String cargo) {
+        this.nome = nome;
+        this.cargo = cargo;
+    }
+    
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public String getCargo() {
+        return cargo;
+    }
+    
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+}
+
+// Classe principal para teste
+public class Main {
+    public static void main(String[] args) {
+        // Criando objetos Cliente, Produto e Funcionario
+        Cliente cliente1 = new Cliente("João", "Rua A, 123", "joao@email.com");
+        Produto produto1 = new Produto("Celular", 1500.0);
+        Funcionario funcionario1 = new Funcionario("Maria", "Vendedor");
+        
+        // Criando objeto Compra
+        Compra compra1 = new Compra(cliente1, produto1, funcionario1, 1500.0);
+        
+        // Exibindo informações da compra
+        System.out.println("Compra realizada por " + compra1.getCliente().getNome() + ", atendida por " + compra1.getFuncionario().getNome());
+        System.out.println("Produto: " + compra1.getProduto().getNome() + " - Valor: R$" + compra1.getValor());
+    }
+}
